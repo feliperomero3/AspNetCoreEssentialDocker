@@ -17,7 +17,6 @@ namespace ExampleApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddSingleton(Configuration);
             services.AddTransient<ProductRepository>();
         }
 
