@@ -1,0 +1,31 @@
+name: ExampleApp-CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - name: Clone
+      uses: actions/checkout@v2.4.0
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1.9.0
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore
+      run: dotnet restore --verbosity normal .\src\ExampleApp.csproj
+    - name: Build
+      run: dotnet build --no-restore --configuration release --verbosity minimal .\src\ExampleApp.csproj
+    - name: Test
+      run: dotnet test --no-build --configuration release --verbosity minimal .\src\ExampleApp.csproj
+    - name: Publish
+      run: dotnet publish --no-build --configuration release --verbosity minimal .\src\ExampleApp.csproj
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: ExampleApp
+        path: .\src\bin\release\net5.0\publish
