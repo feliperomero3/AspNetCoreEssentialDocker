@@ -1,5 +1,7 @@
 # Essential Docker for ASP.NET Core
 
+[![ExampleApp-CI][badge]][branch]
+
 A simple ASP.NET Core project that can be used to demonstrate how you would use Docker containers for your own applications.
 
 Based on the Web Application built in the book ['Essential Docker for ASP.NET Core MVC'][1] by Adam Freeman (Apress, 2017).
@@ -26,3 +28,5 @@ I'm using Razor Pages instead of MVC like in the book.
 Copyright (c) 2021 Felipe Romero
 
 [1]: http://www.apress.com/9781484227770
+[branch]: https://github.com/feliperomero3/EssentialDockerAspNetCore/actions/workflows/ExampleApp-CI.yml
+[badge]: https://github.com/feliperomero3/EssentialDockerAspNetCore/actions/workflows/ExampleApp-CI.yml/badge.svg?branch=master
