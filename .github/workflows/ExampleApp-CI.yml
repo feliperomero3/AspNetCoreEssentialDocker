@@ -17,13 +17,13 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore
-      run: dotnet restore --verbosity normal ./src/ExampleApp.csproj
+      run: dotnet restore --verbosity minimal ./src/ExampleApp.csproj
     - name: Build
-      run: dotnet build --no-restore --configuration Release --verbosity minimal ./src/ExampleApp.csproj
+      run: dotnet build --no-restore --configuration Release --verbosity normal ./src/ExampleApp.csproj
     - name: Test
-      run: dotnet test --no-build --configuration Release --verbosity minimal ./src/ExampleApp.csproj
+      run: dotnet test --no-build --configuration Release --verbosity normal ./src/ExampleApp.csproj
     - name: Publish
-      run: dotnet publish --no-build --configuration Release --verbosity minimal ./src/ExampleApp.csproj
+      run: dotnet publish --no-build --configuration Release --verbosity normal ./src/ExampleApp.csproj
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
