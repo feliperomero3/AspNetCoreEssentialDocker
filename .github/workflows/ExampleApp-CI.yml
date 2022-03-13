@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: ubuntu-18.04
     steps:
     - name: Clone
       uses: actions/checkout@v2.4.0
@@ -17,18 +17,18 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore
-      run: dotnet restore --verbosity normal .\src\ExampleApp.csproj
+      run: dotnet restore --verbosity normal ./src/ExampleApp.csproj
     - name: Build
-      run: dotnet build --no-restore --configuration Release --verbosity minimal .\src\ExampleApp.csproj
+      run: dotnet build --no-restore --configuration Release --verbosity minimal ./src/ExampleApp.csproj
     - name: Test
-      run: dotnet test --no-build --configuration Release --verbosity minimal .\src\ExampleApp.csproj
+      run: dotnet test --no-build --configuration Release --verbosity minimal ./src/ExampleApp.csproj
     - name: Publish
-      run: dotnet publish --no-build --configuration Release --verbosity minimal .\src\ExampleApp.csproj
+      run: dotnet publish --no-build --configuration Release --verbosity minimal ./src/ExampleApp.csproj
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: ExampleApp
-        path: .\src\bin\Release\net5.0\publish
+        path: ./src/bin/Release/net5.0/publish
     - name: Login to DockerHub
       uses: docker/login-action@v1.14.1
       with:
@@ -39,6 +39,7 @@ jobs:
     - name: Build and push to Docker Hub
       uses: docker/build-push-action@v2.9.0
       with:
-        file: .\src\Dockerfile
+        context: ./src
+        file: ./src/Dockerfile
         push: true
         tags: feliperomero/exampleapp:dev
