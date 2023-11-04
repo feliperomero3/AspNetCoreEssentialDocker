@@ -17,13 +17,13 @@ I'm using Razor Pages instead of MVC like in the book.
 ## Getting started
 
 1. Clone the project.
-1. Open the solution file `ExampleApp.sln` with Visual Studio 2019.
+1. Open the solution file `ExampleApp.sln`.
 1. Press F5 to start the application.
 1. Open your browser and go to <https://localhost:44342>.
 
 ## License
 
-[MIT License](LICENSE)
+[MIT License](./LICENSE)
 
 Copyright &copy; 2021 Felipe Romero
 
