@@ -25,7 +25,7 @@ I'm using Razor Pages instead of MVC like in the book.
 
 [MIT License](./LICENSE)
 
-Copyright &copy; 2021 Felipe Romero
+Copyright &copy; 2023 Felipe Romero
 
 [1]: http://www.apress.com/9781484227770
 [branch]: https://github.com/feliperomero3/EssentialDockerAspNetCore/actions/workflows/ExampleApp-CI.yml
