@@ -28,7 +28,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: ExampleApp
-        path: ./src/bin/Release/net5.0/publish
+        path: ./src/bin/Release/net6.0/publish
     - name: Login to DockerHub
       uses: docker/login-action@v3.0.0
       with:
