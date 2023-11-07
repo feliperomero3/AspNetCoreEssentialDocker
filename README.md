@@ -10,8 +10,8 @@ I'm using Razor Pages instead of MVC like in the book.
 
 ## Prerequisites
 
-- Visual Studio 2019
-- ASP.NET Core 5.0
+- Visual Studio 2022
+- ASP.NET Core 6.0
 - Docker Desktop
 
 ## Getting started
