@@ -23,12 +23,12 @@ jobs:
     - name: Test
       run: dotnet test --no-build --configuration Release --verbosity normal ./src/ExampleApp.csproj
     - name: Publish
-      run: dotnet publish --no-build --configuration Release --verbosity normal ./src/ExampleApp.csproj
-    - name: Upload artifact
+      run: dotnet publish --no-build --configuration Release --verbosity normal --output ./publish ./src/ExampleApp.csproj
+    - name: Upload publish artifact
       uses: actions/upload-artifact@v3
       with:
         name: ExampleApp
-        path: ./src/bin/Release/net6.0/publish
+        path: ./publish
     - name: Login to DockerHub
       uses: docker/login-action@v3.0.0
       with:
