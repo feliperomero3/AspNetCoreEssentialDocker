@@ -25,7 +25,7 @@ jobs:
     - name: Publish
       run: dotnet publish --no-build --configuration Release --verbosity normal --output ./src/publish ./src/ExampleApp.csproj
     - name: Upload publish artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ExampleApp
         path: ./src/publish
