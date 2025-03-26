@@ -11,7 +11,7 @@ I'm using Razor Pages instead of MVC like in the book.
 ## Prerequisites
 
 - Visual Studio 2022
-- ASP.NET Core 6.0
+- ASP.NET Core 8.0
 - Docker Desktop
 
 ## Getting started
