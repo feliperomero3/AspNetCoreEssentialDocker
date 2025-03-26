@@ -1,19 +1,31 @@
 using System.Globalization;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+using ExampleApp.Models;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace ExampleApp
+namespace ExampleApp;
+
+public static class Program
 {
-    public static class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
-            CreateHostBuilder(args).Build().Run();
-        }
+        var builder = WebApplication.CreateBuilder(args);
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
+        CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
+
+        builder.Services.AddRazorPages();
+        builder.Services.AddTransient<ProductRepository>();
+
+        var app = builder.Build();
+
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+        app.UseStatusCodePages();
+        app.UseRouting();
+
+        app.UseAuthorization();
+        app.MapRazorPages();
+
+        app.Run();
     }
 }

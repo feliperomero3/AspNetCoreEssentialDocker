@@ -17,9 +17,9 @@ I'm using Razor Pages instead of MVC like in the book.
 ## Getting started
 
 1. Clone the project.
-1. Open the solution file `ExampleApp.sln`.
+1. Open the solution file `src\ExampleApp.sln`.
 1. Press F5 to start the application.
-1. Open your browser and go to <https://localhost:44342>.
+1. The web browser will be launched and you will see the home page of the application.
 
 ## License
 
