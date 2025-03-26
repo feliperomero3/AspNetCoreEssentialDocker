@@ -11,7 +11,7 @@ public class Product
         Price = price;
     }
 
-    public int ProductID { get; set; }
+    public int ProductId { get; set; }
 
     public string Name { get; set; }
 
